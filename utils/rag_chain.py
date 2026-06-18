@@ -4,13 +4,13 @@ load_dotenv()
 from langchain_google_genai import GoogleGenerativeAIEmbeddings
 from langchain_google_genai import ChatGoogleGenerativeAI
 
-from langchain_community.vectorstores import Chroma
+from langchain_chroma import Chroma
 
 def create_db(chunks):
 
     embeddings = GoogleGenerativeAIEmbeddings(
-        model="models/embedding-001"
-    )
+    model="gemini-embedding-001"
+)
 
     db = Chroma.from_documents(
         chunks,
